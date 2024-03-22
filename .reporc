@@ -1,0 +1,15 @@
+#!/bin/bash
+
+file=${HOME}/REPOBARE/_repo/mane/.d/.config/env.sh
+
+if [[ -f ${file} ]]; then
+    if ! . ${file}; then
+        echo "in fs=file://${HOME}/REPOBARE/_repo/mane/.reporc , line=${LINENO} : : EXEC_FAIL : '. file://${file}' : ${hint} : return 1" >&2
+        return 1
+    fi
+else
+    echo "in fs=file://${HOME}/REPOBARE/_repo/mane/.reporc , line=${LINENO}: : EXEC_FAIL : '-f ${file}' : ${hint} : return 1" >&2
+    return 1
+fi
+
+_arb_up ${MANE_PATH}/.d/.arb/lib0.arb
