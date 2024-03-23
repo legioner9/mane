@@ -12,4 +12,8 @@ else
     return 1
 fi
 
+arr_lib=($(_str_lib_lst))
+
+# export PS1="${RED}${arr_lib[*]} \[\e[97m\]\u@\h \w \$ \[\e[m\]${NORMAL}"
+
 _arb_up ${MANE_PATH}/.d/.arb/lib0.arb
