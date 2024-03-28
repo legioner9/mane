@@ -2,7 +2,7 @@
 
 #. "${HOME}/.bashrc"
 
-filename="${REPO_PATH}/mane/.d/.arb/lib0.arb/_XXX.ram/.grot/echo0.sh"
+filename="${REPO_PATH}/mane/.d/.arb/lib0.arb/echo0.ram/.grot/echo0.sh"
 echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
 idir=$(pwd)
 # cd "$(prs_f -d $filename)" || qq_exit "$(prs_f -d $filename) not found"

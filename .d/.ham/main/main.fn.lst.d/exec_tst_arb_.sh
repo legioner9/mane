@@ -17,6 +17,8 @@ file_lst=${MANE_PATH}/.d/.ham/main/main.fn.lst.d/_exec_tst_arb_.lst
 #     return 1
 # fi
 
+echo -e "${HLIGHT}--- exec: _tst_arb ${file_lst} ---${NORMAL}" #start files
+
 if ! _tst_arb ${file_lst}; then
     echo "in file://${file_sh} : FAIL_EXEC : '_tst_arb() file://${file_lst}' : return 1" >&2
     return 1
