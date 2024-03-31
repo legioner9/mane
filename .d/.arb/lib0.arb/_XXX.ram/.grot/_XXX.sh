@@ -12,7 +12,7 @@ idir=$(pwd)
 _XXX() {
     local FNN=${FUNCNAME[0]}
     local PPWD=$PWD
-    local ARGS=($@)
+    local ARGS=($@) 
     local NARGS=$#
     local verbose=0
     [[ " ${ARGS[*]} " =~ " -verbose " ]] || verbose=1
@@ -62,20 +62,7 @@ ${NORMAL}"
         echo "_head fn: ${d_name}/${FNN}"
         return 0
     fi
-    # if ! ${_garg2e_} "${ARGS[@]}" 1>/dev/null; then
-    #     plt_exit " ${FNN} return 1: ${FNLOCK}"
-    #     return 1
-    # fi
-    # g_args=($(${_garg2e_} "${ARGS[@]}"))
-    # [[ 1 -eq ${verbose} ]] || echo -e "${GREEN}\${g_args[@]}: ${g_args[*]}${NORMAL}" #print variable
-    # for strex in $(${_garg2e_} "${ARGS[@]}"); do
-    #     [[ 1 -eq ${verbose} ]] || echo "local $strex"
-    #     eval local $strex
-    # done
-    #{default_cntl_fn}
-    # amount_arg $# 1 1
 
-    #{body_fn}
 }
 
 cd "${idir}"
