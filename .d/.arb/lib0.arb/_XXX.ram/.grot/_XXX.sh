@@ -12,11 +12,11 @@ idir=$(pwd)
 _XXX() {
     local FNN=${FUNCNAME[0]}
     local PPWD=$PWD
-    local ARGS=($@) 
+    local ARGS=("$@") 
     local NARGS=$#
     local verbose=0
-    [[ " ${ARGS[*]} " =~ " -verbose " ]] || verbose=1
-    [[ 1 -eq ${verbose} ]] || echo -e "${CYAN}---$FNN() $* ---${NORMAL}" #started functions
+    # [[ " ${ARGS[*]} " =~ " -verbose " ]] || verbose=1
+    # [[ 1 -eq ${verbose} ]] || echo -e "${CYAN}---$FNN() $* ---${NORMAL}" #started functions
     local d_name=$(dirname ${PLT_PATH}/.d/.arb/bsh.arb/_XXX.ram/.grot/_XXX.sh)
     # wrp_fifs1_ cd ${d_name} -d
     #{intro_fn}
