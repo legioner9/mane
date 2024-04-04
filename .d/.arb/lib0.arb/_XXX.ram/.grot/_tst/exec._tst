@@ -10,8 +10,8 @@ idir=$(pwd)
 
 # cd "$(prs_f -d $filename)" || qq_exit "$(prs_f -d filename) not found"
 
-dir=$(prs_f -d "$filename")
-cd "$dir" || plt_exit
+dir=$(_prs_f -d "$filename")
+cd "$dir" || echo "FAIL_EXEC cd $dir" >&2
 . "$dir"/_flow_tst.sh &>/dev/null
 # . "$dir"/_flow_tst.sh &>res
 
