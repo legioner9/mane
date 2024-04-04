@@ -2,14 +2,14 @@
 
 #. "${HOME}/.bashrc"
 
-filename="${REPO_PATH}/mane/.d/.arb/lib0.arb/_TST.ram/.grot/_TST.sh"
+filename="${REPO_PATH}/mane/.d/.arb/lib0.arb/bcp_strc_ml0.ram/.grot/bcp_strc_ml0.sh"
 echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
 idir=$(pwd)
 # cd "$(prs_f -d $filename)" || qq_exit "$(prs_f -d $filename) not found"
 # garg_ $(prs_f -n $filename) $@ 1>/dev/null
 #{pre_fn}
 
-_TST() {
+bcp_strc_ml0() {
     local FNN=${FUNCNAME[0]}
     local PPWD=$PWD
     local ARGS=("$@")
@@ -17,7 +17,7 @@ _TST() {
     local verbose=0
     # [[ " ${ARGS[*]} " =~ " -verbose " ]] || verbose=1
     # [[ 1 -eq ${verbose} ]] || echo -e "${CYAN}---$FNN() $* ---${NORMAL}" #started functions
-    local d_name=$(dirname ${PLT_PATH}/.d/.arb/bsh.arb/_TST.ram/.grot/_TST.sh)
+    local d_name=$(dirname ${PLT_PATH}/.d/.arb/bsh.arb/bcp_strc_ml0.ram/.grot/bcp_strc_ml0.sh)
     # wrp_fifs1_ cd ${d_name} -d
     #{intro_fn}
     if [ "-h" == "$1" ]; then
@@ -67,7 +67,7 @@ ${NORMAL}"
         if [[ -f ${d_name}/_tst/exec.tst ]]; then
             . ${d_name}/_tst/exec.tst
         else
-            echo "in fs= file://${REPO_PATH}/mane/.d/.arb/lib0.arb/_TST.ram/.grot/_TST.sh , line=${LINENO}, ${FNN}() :  NOT_FILE : 'file://${d_name}/_tst/exec.tst' : ${hint} : return 1" >&2
+            echo "in fs= file://${REPO_PATH}/mane/.d/.arb/lib0.arb/bcp_strc_ml0.ram/.grot/bcp_strc_ml0.sh , line=${LINENO}, ${FNN}() :  NOT_FILE : 'file://${d_name}/_tst/exec.tst' : ${hint} : return 1" >&2
             return 1
         fi
     fi
