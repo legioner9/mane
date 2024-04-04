@@ -12,7 +12,7 @@ idir=$(pwd)
 _XXX() {
     local FNN=${FUNCNAME[0]}
     local PPWD=$PWD
-    local ARGS=("$@") 
+    local ARGS=("$@")
     local NARGS=$#
     local verbose=0
     # [[ " ${ARGS[*]} " =~ " -verbose " ]] || verbose=1
@@ -27,8 +27,8 @@ NAME: ${FNN}()
 WHERE?:(only in root dir)Y/N
 WHAT?:(only abs path | only name file | any stile path )
 ARGS: 
-$1
-[ ,$2 num_menu ]
+\$1
+[ ,\$2 num_menu ]
 CNTLS:
 required
 optional 
@@ -41,26 +41,35 @@ ERROR: ( (plt_err | plt_pause | plt_exit) errmes return 1 | ... )
 WARN: 
 DEBUG:
 EXAMP:
-${FNN} -<>
+    ${FNN} 
 ${NORMAL}"
         return 0
     fi
     #{help_cntl_fn}
-    if [ "_man" == "$1" ]; then
+    if [[ "_man" == "$1" ]]; then
         edit_ "${d_name}/${FNN}".man
         return 0
     fi
-    if [ "_go" == "$1" ]; then
+    if [[ "_go" == "$1" ]]; then
         edit_ "${d_name}/${FNN}".sh
         return 0
     fi
-    if [ "_lst" == "$1" ]; then
+    if [[ "_lst" == "$1" ]]; then
         edit_ "${d_name}/${FNN}".lst
         return 0
     fi
-    if [ "_head" == "$1" ]; then
+    if [[ "_head" == "$1" ]]; then
         echo "_head fn: ${d_name}/${FNN}"
         return 0
+    fi
+
+    if [[ "_tst" == "$1" ]]; then
+        if [[ -f ${d_name}/_tst/exec.tst ]]; then
+            . ${d_name}/_tst/exec.tst
+        else
+            echo "in fs= file://${REPO_PATH}/mane/.d/.arb/lib0.arb/_XXX.ram/.grot/_XXX.sh , line=${LINENO}, ${FNN}() :  NOT_FILE : 'file://${d_name}/_tst/exec.tst' : ${hint} : return 1" >&2
+            return 1
+        fi
     fi
 
 }

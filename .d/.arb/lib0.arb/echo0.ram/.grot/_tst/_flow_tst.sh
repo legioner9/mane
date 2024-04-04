@@ -12,7 +12,7 @@ cd "${idir_fasf456}" || {
 
 : >${idir_fasf456}/res
 
-echo "echo0 >${idir_fasf456}/res" >&2
+# echo "echo0 >${idir_fasf456}/res" >&2
 echo0 >${idir_fasf456}/res
 
 # cr_tst_dir_ <dat &>>res
