@@ -1,3 +1,3 @@
 #!/bin/bash
 
-MANE_PATH=${HOME}/REPOBARE/_repo/mane
+# MANE_PATH=${HOME}/REPOBARE/_repo/mane

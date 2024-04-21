@@ -1,0 +1,33 @@
+#!/bin/bash
+
+file=${MANE_PATH}/.d/.config/env.sh
+
+if [[ -f ${file} ]]; then
+    if ! . ${file}; then
+        echo "in fs=file://${MANE_PATH}/.d/.repo.d/.repo.rc , line=${LINENO} : : EXEC_FAIL : '. file://${file}' : ${hint} : return 1" >&2
+        return 1
+    fi
+else
+    echo "in fs=file://${MANE_PATH}/.d/.repo.d/.repo.rc , line=${LINENO}: : EXEC_FAIL : '-f ${file}' : ${hint} : return 1" >&2
+    return 1
+fi
+
+arr_lib=($(_str_lib_lst))
+
+# export PS1="${RED}${arr_lib[*]} \[\e[97m\]\u@\h \w \$ \[\e[m\]${NORMAL}"
+
+echo -e "${HLIGHT}--- _arb_up ${MANE_PATH}/.d/.arb/lib0.arb ---${NORMAL}" #start files
+if ! _arb_up ${MANE_PATH}/.d/.arb/lib0.arb "in fs=file://${MANE_PATH}/.d/.repo.d/.repo.rc , line=${LINENO}, pwd=${PWD}"; then
+    echo "in fs= file://${MANE_PATH}/.d/.repo.d/.repo.rc , line=${LINENO}: : EXEC_FAIL : '_arb_up ${MANE_PATH}/.d/.arb/lib0.arb' : ${hint} : return 1" >&2
+    return 1
+fi
+
+file_sh=${MANE_PATH}/.d/.ham/main/main.fn.lst.d/exec_tst_arb_.sh
+file_lst=${MANE_PATH}/.d/.ham/main/main.fn.lst.d/_exec_tst_arb_.lst
+
+if ! _tst_arb ${file_lst}; then
+    echo "in fs= file://${MANE_PATH}/.d/.repo.d/.repo.rc , line=${LINENO} : : EXEC_FAIL : '_tst_arb file://${file_lst}' : ${hint} : return 1" >&2
+    return 1
+fi
+
+return 0
