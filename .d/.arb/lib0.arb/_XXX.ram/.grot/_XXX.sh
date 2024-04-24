@@ -10,6 +10,9 @@ idir=$(pwd)
 #{pre_fn}
 
 _XXX() {
+
+    #* local fn_data_dir=${MANE_DATA_PATH}/.d/.st_rc_d.data.d/_XXX
+
     local FNN=${FUNCNAME[0]}
     local PPWD=$PWD
     local ARGS=("$@")
