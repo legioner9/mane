@@ -2,7 +2,7 @@
 
 file=${MANE_PATH}/.d/.config/env.sh
 
-path_to_data=${MANE_PATH}/.d/.repo.d/.repo.data
+path_to_data=${HOME}/.stl/.path/mane.path
 
 if [[ -f ${path_to_data} ]]; then
 
